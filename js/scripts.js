@@ -1,6 +1,8 @@
 $().ready(function () {
+
+
   const $url_ws =
-    "https://www.resto123.com/wp-content/plugins/Api_Techsysprogram/data";
+    "https://www.prueba.techsysprogram.com/wp-content/plugins/Api_Techsysprogram/data";
   const $url_TechAPI = "http://boulier.techsysprogram.fr/TechAPI";
   const btn01 = document.querySelector("#btnradio1");
   const btn02 = document.querySelector("#btnradio2");
@@ -9,12 +11,20 @@ $().ready(function () {
   let var_json_control = "";
   let var_titulo = "";
 
-  let Mi_IDO = ""; //aqui se guarda el id organisateur e id tirage para no pasar varias veces
+  let Mi_IDO = "9905-186"; //aqui se guarda el id organisateur e id tirage para no pasar varias veces
+
+
+  
+  console.log("estoy aqui");
+
+
 
   //aqui lo que hago es mostrar la tabla segun donde este seleccionado mas a delante sera mas inteligente
   Affiche_table(2);
 
   $("select[name=tech_select_tirage]").change(function () {
+    console.log("estoy aqui");
+
     Affiche_table(Select_nuevo_activar());
     // console.log(this.value);
   });
@@ -124,11 +134,15 @@ $().ready(function () {
   }
 
   function Select_nuevo_activar() {
+
+    console.log("estoy aqui");
+
+
     var radios = document.getElementsByName("btnradio");
     var Radio_select = "";
     for (var i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
-        //console.log(radios[i].id);
+        console.log(radios[i].id);
         Radio_select = radios[i].id;
         break; //sortir
       }
@@ -147,6 +161,7 @@ $().ready(function () {
     Mi_IDO = Tirage_actif(1);
     switch (index) {
       case 1:
+        console("holaaaaaaaaa 111"),
         // window.location = url;
         $.ajax({
           type: "POST",
@@ -162,6 +177,7 @@ $().ready(function () {
         break;
 
       case 2:
+        console("holaaaaaaaaa"),
         $.ajax({
           type: "POST",
           url: $url_ws + "/ws_table_actif.php?ido=" + Mi_IDO + "-0-0-0&titre=0",

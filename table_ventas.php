@@ -34,7 +34,17 @@ curl_close($curl);
     $Tirage = "";
     $code = 0;
 
-    $html2 = "<select class='form-select' name=tech_select_tirage>";
+    $html2 = <<<FIN
+    <html>
+    <head>
+        <title>Ma page PHP</title>
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
+    <h1>aqui estoy</h1>
+    FIN;
+
+    $html2 = $html2 . "<select class='form-select' name=tech_select_tirage>";
 
     foreach ($arr as $item) { //foreach element in $arr
         $code = $item['sIDTirage'];
@@ -43,7 +53,7 @@ curl_close($curl);
             <option value='$code'>$Tirage</option>
         FIN;
     }
-    $html2 = $html2 . "</select><h1></h1>";
+    $html2 = $html2 . "</select><h1>estas bien</h1></body></html>";
     echo $html2;
 
     ?>
@@ -53,7 +63,7 @@ curl_close($curl);
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
         <label class="btn btn-outline-primary" for="btnradio1">Nouvelles planches</label>
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked="">
-        <label class="btn btn-outline-primary" for="btnradio2">Utiliser déjà mes planches</label>
+        <label class="btn btn-outline-primary" for="btnradio2">Utiliser déjà mes planches22</label>
     </div>
     <h1></h1>
 
