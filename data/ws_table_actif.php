@@ -1,8 +1,8 @@
 <?php
 //esto es lo que necesita para api woocommerce
-require "/home/ynix0625/public_html/wp-content/plugins/Api_Techsysprogram/" . '/vendor/autoload.php';
+//require "/home/ynix0625/public_html/wp-content/plugins/Api_Techsysprogram/" . '/vendor/autoload.php';
 
-use Automattic\WooCommerce\Client;
+//use Automattic\WooCommerce\Client;
 
 //$valueNom =  $('#pr_nom').val();
 $valueNom =  "hol";
@@ -110,6 +110,7 @@ $arr2 = json_decode($response, true);
 $etat = true;
 $PlancheNom = "";
 
+
 foreach ($arr2 as $item) { //foreach element in $arr
     $etat = $item['bEtat'];
     $Codebarre = $item['sCodeBarre'];
@@ -173,7 +174,7 @@ FIN;
 
 
 
-if ($bRojo == false && ($str_stock != "0" || $str_actif != "0")) {
+if ($bRojo == false && ($str_stock != "0" || $str_actif != "0") && false) {
 
     $SiteWeb = 'https://www.resto123.com';
     $NewPost = $SiteWeb . '/wp-json/wc/v3/products';

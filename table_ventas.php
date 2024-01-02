@@ -35,25 +35,31 @@ curl_close($curl);
 <body>
 
     <?php
-    $arr = json_decode($response, true);
-    $Tirage = "";
-    $code = 0;
+        $arr = json_decode($response, true);
+        $Tirage = "";
+        $code = 0;
 
-    $html2 = <<<FIN
-    <h1>aqui estoy</h1>
-    FIN;
+        //$html2 = <<<FIN
+        //<h1>aqui estoy</h1>
+        //<h2>aqui estoy</h2>
+        //FIN;
 
-    $html2 = $html2 . "<select class='form-select' name=tech_select_tirage>";
+        //$html2 = $html2 . "<select class='form-select' id='tech_select_tirage' onchange='changeBackground()'>";
 
-    foreach ($arr as $item) { //foreach element in $arr
-        $code = $item['sIDTirage'];
-        $Tirage = $item['dDateTirage'] . "  " . $item['sAlias'] . "   => " . $code;
-        $html2 = $html2 . <<<FIN
-            <option value='$code'>$Tirage</option>
+        $html2 = <<<FIN
+            <label for="tech_select_tirage">Choisissez une couleur :</label>
+            <select class="form-select" id="tech_select_tirage" name="tech_select_2" onchange="changeBackground()">
         FIN;
-    }
-    $html2 = $html2 . "</select><h1>estas bien</h1>";
-    echo $html2;
+
+        foreach ($arr as $item) { //foreach element in $arr
+            $code = $item['sIDTirage'];
+            $Tirage = $item['dDateTirage'] . "  " . $item['sAlias'] . "   => " . $code;
+            $html2 = $html2 . <<<FIN
+                <option value='$code'>$Tirage</option>
+            FIN;
+        }
+        $html2 = $html2 . "</select>";
+        echo $html2;
 
     ?>
 
@@ -62,7 +68,7 @@ curl_close($curl);
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
         <label class="btn btn-outline-primary" for="btnradio1">Nouvelles planches</label>
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked="">
-        <label class="btn btn-outline-primary" for="btnradio2">Utiliser déjà mes planches22</label>
+        <label class="btn btn-outline-primary" for="btnradio2">Utiliser déjà mes planches</label>
     </div>
     <h1></h1>
 
