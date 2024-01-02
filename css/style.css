@@ -1,0 +1,7 @@
+#btnStock {
+    background-color: rgb(199, 25, 161);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}

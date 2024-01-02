@@ -26,6 +26,11 @@ $response = curl_exec($curl);
 curl_close($curl);
 ?>
 
+<html>
+<head>
+    <title>Ma page PHP</title>
+
+</head>
 
 <body>
 
@@ -35,12 +40,6 @@ curl_close($curl);
     $code = 0;
 
     $html2 = <<<FIN
-    <html>
-    <head>
-        <title>Ma page PHP</title>
-        <script src="js/scripts.js"></script>
-    </head>
-    <body>
     <h1>aqui estoy</h1>
     FIN;
 
@@ -53,7 +52,7 @@ curl_close($curl);
             <option value='$code'>$Tirage</option>
         FIN;
     }
-    $html2 = $html2 . "</select><h1>estas bien</h1></body></html>";
+    $html2 = $html2 . "</select><h1>estas bien</h1>";
     echo $html2;
 
     ?>
@@ -78,3 +77,4 @@ curl_close($curl);
 
     <div id="Compra2"></div>
 </body>
+</html>

@@ -1,6 +1,7 @@
 $().ready(function () {
+  console.log("estoy aqui123");
 
-
+/*
   const $url_ws =
     "https://www.prueba.techsysprogram.com/wp-content/plugins/Api_Techsysprogram/data";
   const $url_TechAPI = "http://boulier.techsysprogram.fr/TechAPI";
@@ -12,11 +13,9 @@ $().ready(function () {
   let var_titulo = "";
 
   let Mi_IDO = "9905-186"; //aqui se guarda el id organisateur e id tirage para no pasar varias veces
-
-
+*/
   
   console.log("estoy aqui");
-
 
 
   //aqui lo que hago es mostrar la tabla segun donde este seleccionado mas a delante sera mas inteligente
