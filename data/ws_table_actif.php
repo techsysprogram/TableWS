@@ -21,7 +21,7 @@ $ID_Org = $IDO[0]; //  $_GET['ido'];
 $IDTirage = $IDO[1]; //   $_GET['idt'];
 $str_stock = $IDO[2]; //   $_GET['ido'];  aqui tengo las planches
 $str_actif = $IDO[3]; //   $_GET['ido'];  aqui los codigo de barras
-$str_titulo = $_GET['titre']; //   $_GET['ido'];
+$str_titulo = $_GET['titre']; //   $_GET['titre'];
 //    lo pongo vacio porque no es un PUT
 $bRojo = false;
 $data = "";

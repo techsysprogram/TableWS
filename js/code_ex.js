@@ -1,4 +1,3 @@
-
 /*
 jQuery( document ).ready( function( $ ) {
     $( '#btnStock' ).click( function() {
@@ -8,23 +7,31 @@ jQuery( document ).ready( function( $ ) {
 */
 
 jQuery( document ).ready( function( $ ) {
-
     const $url_ws =
-    "https://www.prueba.techsysprogram.com/wp-content/plugins/tech_checkbox/data";
+    "https://www.prueba.techsysprogram.com/wp-content/plugins/tech_checkbox/";
     const $url_TechAPI = "http://boulier.techsysprogram.fr/TechAPI";
     const btn01 = $("#btnradio1");
     const btn02 = $("#btnradio2");
     const btn05 = $("#btnStock");
     const btn06 = $("#btnWoo");
+    const var_select_tirage = $('#tech_select_tirage');
+    //recupera el valor actual
+    //var tech_select_Value = $('#tech_select_tirage').val();
+
     let var_json_control = "";
     let var_titulo = "";
-
     
     //aqui lo que hago es mostrar la tabla segun donde este seleccionado mas a delante sera mas inteligente
     Affiche_table(2);
 
+    var_select_tirage.change(function () {
+        //console.log("ya llegueeeeeeeeeeeee");
+        Affiche_table(2);
+    });
+
+
     btn06.click( function() {
-        alert( 'hola aurore' );
+        alert( 'hola' );
     } );
 
     // Ajoute un gestionnaire d'événement pour le clic sur le bouton
@@ -42,7 +49,7 @@ jQuery( document ).ready( function( $ ) {
     //console.log("index es =" + index);
     switch (index) {
       case 1:
-        console.log("holaaaaaaaaa 111");
+        //console.log("holaaaaaaaaa 111");
         /*
         // window.location = url;
         $.ajax({
@@ -60,15 +67,31 @@ jQuery( document ).ready( function( $ ) {
         break;
 
       case 2:
-        console.log($url_ws + "/ws_table_actif.php?ido=" + Mi_IDO + "-0-0-0&titre=0");
+        //console.log($url_ws + "/ws_table_actif.php?ido=" + Mi_IDO + "-0-0-0&titre=0");
+        $.ajax({
+            type: "POST",
+            url: $url_ws + "/data/ws_misPlanches.php?ido=" + Mi_IDO + "-0-0-0&titre=0",
+            async: true,
+            success: function (response) {
+               //console.log(response);
+              //$("#tech_id_table").html(response);
+              //$("#Compra2").html(tech_mostrar(2));
+              var divElement = document.getElementById("Compra2");
+              divElement.innerHTML = response;
+            },
+        });
+
+
         $.ajax({
           type: "POST",
-          url: $url_ws + "/ws_table_actif.php?ido=" + Mi_IDO + "-0-0-0&titre=0",
+          url: $url_ws + "/ws/MisPlanches.php?ido=" + Mi_IDO + "-0-0-0&titre=0",
           async: true,
           success: function (response) {
-             console.log(response);
+             //console.log(response);
             //$("#tech_id_table").html(response);
             //$("#Compra2").html(tech_mostrar(2));
+            var divElement = document.getElementById("tech_id_table");
+            divElement.innerHTML = response;
           },
         });
         break;
@@ -80,10 +103,10 @@ jQuery( document ).ready( function( $ ) {
   
   // ici je donne l'id organisateur et id tirage actuel donde me encuentro
   function Tirage_actif(ID_O) {
-    console.log("pase aqui en tirage_actif" + ID_O);
+    //console.log("pase aqui en tirage_actif" + ID_O);
     
-    var selectElement = document.getElementById("tech_select_tirage");
-    var cases = selectElement.value;
+    //var selectElement = document.getElementById("tech_select_tirage");
+    var cases = $('#tech_select_tirage').val();
     //ID_O= 1 devuelvo los IdOrg - IDtirage
     //console.log(selectElement);
 
@@ -107,21 +130,24 @@ jQuery( document ).ready( function( $ ) {
 
   }
 
+  
+
+  
 } );
 
-  
-function changeBackground(selectedValue) {
-    var selectElement = document.getElementById("tech_select_tirage");
-    var selectedValue = selectElement.value;
-    console.log("lol");
-    console.log(selectedValue);
-    //$("#tech_id_table").html(selectedValue);
-    var divElement = document.getElementById("tech_id_table");
-    divElement.innerHTML = selectedValue;
-}
-
-  
 /*
+    function changeBackground() {
+        var selectElement = document.getElementById("tech_select_tirage");
+        var selectedValue = selectElement.value;
+        console.log("lol 12333333333");
+        //Affiche_table(2);
+        /*
+        console.log("lol");
+        console.log(selectedValue);
+        //$("#tech_id_table").html(selectedValue);
+        var divElement = document.getElementById("tech_id_table");
+        divElement.innerHTML = selectedValue;
+    }
 jQuery(document).ready(function($) {
     // Sélectionne le bouton par son ID ou sa classe CSS
     var bouton = $('#btnStock');

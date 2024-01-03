@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 function executer_funcion_table_ventas()
 {
     // Load plugin files.
-    include "table_ventas.php";
+    include "principal.php";
 }
 add_shortcode('short_checkbox', 'executer_funcion_table_ventas');
 
