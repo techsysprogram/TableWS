@@ -1,3 +1,9 @@
+<?php
+    //aqui las variables globales importantes
+    $url_globale = "https://www.prueba.techsysprogram.com/wp-content/plugins/tech_checkbox/";
+?>
+
+
 <html>
 <head>
     <title>Ma page PHP</title>
@@ -7,24 +13,26 @@
 <body>
 
     <?php
+
+        //aqui recupero la liste de tirages completo pero en formato desarrollador
+        $ID_Org = 9905;  //$_GET['ido'];
+        $url = $url_globale . "ws/ws_ListeTirage.php?ido=".$ID_Org."&dev=3";
+        $ws_ListeTirage2 = file_get_contents($url);
+
         //aqui recupero la liste de tirages completo
         $ID_Org = 9905;  //$_GET['ido'];
-        $url = "https://www.prueba.techsysprogram.com/wp-content/plugins/tech_checkbox/ws/ListeTirage.php?ido=".$ID_Org;
+        $url = $url_globale . "ws/ws_ListeTirage.php?ido=".$ID_Org."&dev=0";
         $ws_ListeTirage = file_get_contents($url);
-
-
 
         $arr = json_decode($ws_ListeTirage, true);
         $Tirage = "";
         $code = 0;
-
-        $ws_ListeTirage = "webservice  =>  " . 'http://boulier.techsysprogram.fr/TechAPI/Tirages/'.$ID_Org . '<br>' . '<br>' . $ws_ListeTirage;
         
         $html2 = <<<FIN
 
             <!-- comentario simple -->
             
-            <h6>$ws_ListeTirage</h6>
+            <h7>$ws_ListeTirage2</h7>
             <!-- <label for="tech_select_tirage">Choisissez une couleur :</label> -->
             
             <select class="form-select" id="tech_select_tirage" name="tech_select_name" onchange="changeBackground()">

@@ -70,7 +70,7 @@ jQuery( document ).ready( function( $ ) {
         //console.log($url_ws + "/ws_table_actif.php?ido=" + Mi_IDO + "-0-0-0&titre=0");
         $.ajax({
             type: "POST",
-            url: $url_ws + "/data/ws_misPlanches.php?ido=" + Mi_IDO + "-0-0-0&titre=0",
+            url: $url_ws + "/ws/ws_MisPlanches.php?ido=" + Mi_IDO + "-0-0-0&dev=3",
             async: true,
             success: function (response) {
                //console.log(response);
@@ -84,7 +84,7 @@ jQuery( document ).ready( function( $ ) {
 
         $.ajax({
           type: "POST",
-          url: $url_ws + "/ws/MisPlanches.php?ido=" + Mi_IDO + "-0-0-0&titre=0",
+          url: $url_ws + "/MisPlanches.php?ido=" + Mi_IDO + "-0-0-0",
           async: true,
           success: function (response) {
              //console.log(response);
