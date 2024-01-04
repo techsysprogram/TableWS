@@ -12,6 +12,9 @@
 ?>       
 
 <?php
+
+
+
 $DirPlugin = "";
 
 $html2 = "";
@@ -68,8 +71,8 @@ foreach ($arr2 as $item) { //foreach element in $arr
     if (!$etat) {
         $html2 = $html2 . <<< FIN
             <th scope='row'>
-            <div class="form-check" >
-            <input class="form-check-input" onchange="tech_enregistrer2()" type="checkbox" name="check01" value=$Codebarre_val>
+                <input type="checkbox" id="$Codebarre_val" name="check01" value=$Codebarre_val>
+                <label for="$Codebarre_val"></label>
             FIN;
     } else {
         $html2 = $html2 . "<th>";
