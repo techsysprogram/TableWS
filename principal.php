@@ -64,11 +64,11 @@
 
     <div id="tech_id_table"></div>
 
+    <div class="btn-TechSection">
+        <!-- <button class="btn btn-primary" name="valider" id="btnEnregistrer">Enregistrer planches</button>-->
+        <button class="btn_tech01" name="valider3" id="btnStock">verificar stock</button>
 
-    <!-- <button class="btn btn-primary" name="valider" id="btnEnregistrer">Enregistrer planches</button>-->
-    <button class="btn btn-primary" name="valider3" id="btnStock">verificar stock</button>
-
-    <button class="btn btn-primary" id="btnWoo">woocommerce</button>
-
+        <button class="btn_tech01" name="valider2" id="btnWoo">woocommerce</button>
+    </div>
 </body>
 </html>

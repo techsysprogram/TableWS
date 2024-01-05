@@ -49,20 +49,21 @@ foreach ($arr2 as $item) { //foreach element in $arr
     $etat = $item['bEtat'];
     $Codebarre = $item['sCodeBarre'];
     $Codebarre_val =  $Codebarre . "|" . $item['sPlancheType'] . "|" . $item['sPlancheFormat'] . "|" . $item['sPlanchePrix'] . "|";
-    $PlancheNom = $item['sPlancheType'] . " - " . $item['sPlancheFormat'] . '<br>' . $item['sPlancheComment'];
+    $PlancheNom = $item['sPlancheType'] . " - " . $item['sPlancheFormat'] ;
+    $PlancheDescription =  $item['sPlancheComment'];
     $Prix = $item['sPlanchePrix'] . "€";
 
     //aqui separa la liena en 3 partes codebarre,actif!,number
     $html2 = $html2 . ($etat ? "<tr class='active-row'>" : "<tr>");
 
-    $html2 = $html2 . "<td class='primera_col'>$PlancheNom</td>";
+    $html2 = $html2 . "<td class='primera_col'><h5>$PlancheNom</h5><h6>$PlancheDescription</h6></td>";
     //$html2 = $html2 . "<td>$Codebarre</td>";
     
     if ($etat) {
-        $html2 = $html2 . "<td><span class='pl_reponsive'>$PlancheNom<br></span><span class='action_btn'><a href='http://planches.techsysprogram.fr/LotoWS/PDFRecuperer/PL-$Codebarre.pdf' target='_blank'>  $Codebarre </a></span></td>";
+        $html2 = $html2 . "<td><span class='pl_reponsive'><h5>$PlancheNom</h5><h6>$PlancheDescription</h6></span><span class='action_btn'><a href='http://planches.techsysprogram.fr/LotoWS/PDFRecuperer/PL-$Codebarre.pdf' target='_blank'>  $Codebarre </a></span></td>";
     } else {
         //$html2 = $html2 . "<td>$Codebarre</td>";
-        $html2 = $html2 . "<td><span class='pl_reponsive'>$PlancheNom<br></span><span class='action_btn'><a href='http://planches.techsysprogram.fr/LotoWS/PDFRecuperer/PL-$Codebarre.pdf' target='_blank'>  $Codebarre </a></span></td>";
+        $html2 = $html2 . "<td><span class='pl_reponsive'><h5>$PlancheNom</h5><h6>$PlancheDescription</h6></span><span class='action_btn'><a href='http://planches.techsysprogram.fr/LotoWS/PDFRecuperer/PL-$Codebarre.pdf' target='_blank'>  $Codebarre </a></span></td>";
     }
 
   

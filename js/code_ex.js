@@ -12,7 +12,7 @@ jQuery( document ).ready( function( $ ) {
     const $url_TechAPI = "http://boulier.techsysprogram.fr/TechAPI";
     const btn01 = $("#btnradio1");
     const btn02 = $("#btnradio2");
-    const btn05 = $("#btnStock");
+    const btn05 = $("#btnStock2");
     const btn06 = $("#btnWoo");
     const var_select_tirage = $('#tech_select_tirage');
     //recupera el valor actual

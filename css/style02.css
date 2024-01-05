@@ -16,17 +16,19 @@ body > div {
 .table_responsive {
   max-width: 1200px;
 
-  border: 1px solid #00bcd4;
-  background-color: #efefef33;
+  border: 1px solid #ffce00;
+  background-color: #eee;
   padding: 1px;
   overflow: auto;
   margin: auto;
   border-radius: 4px;
+
 }
+
 
 table {
   width: 100%;
-  font-size: 13px;
+  font-size: 16px;
   color: #444;
   border-collapse: collapse;
 
@@ -36,8 +38,21 @@ table {
 }
 
 table > thead {
-  background-color: #00bcd4;
+  background-color: #ffce00;
   color: #fff;
+  /* height: 50px; */
+  height: 3rem;
+
+  padding: 20px 50px;
+  font-size: 1.3rem;
+  /* cursor: pointer; */
+  border: 0px;
+  
+  position: relative;
+  transition: all .2s;
+  color: #252222;
+  border-radius: 30px;
+  
 }
 
 table > thead th {
@@ -106,7 +121,7 @@ table > tbody > tr > td > img {
 }
 
 .action_btn > a:nth-child(1) {
-  border-color: #26a69a;
+  border-color: #ffce00;
 }
 
 .action_btn > a:nth-child(2) {
@@ -150,7 +165,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label:before {
   content: "\2714";
-  border: 0.1em solid #5822af;
+  border: 0.1em solid #464547;
   border-radius: 0.2em;
   display: inline-block;
 
@@ -171,8 +186,9 @@ input[type="checkbox"] + label:active:before {
   transform: scale(0);
 }
 
+
 input[type="checkbox"]:checked + label:before {
-  background-color: MediumSeaGreen;
+  background-color: #ffce00;
   border-color: MediumSeaGreen;
   color: #fff;
 }
@@ -187,5 +203,55 @@ input[type="checkbox"]:checked:disabled + label:before {
   background-color: #bfb;
   border-color: #bfb;
 }
+
+/* #endregion */
+
+/* #region css bouton */
+
+.btn-TechSection {
+  text-align: center;
+}
+
+.btn_tech01 {
+  top: 10px;
+  margin: 10px;
+  background: #ffce00;
+
+  padding: 20px 35px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: 0px;
+  background: transparent;
+  position: relative;
+  transition: all .2s;
+  overflow: hidden;
+  color: #252222;
+  border-radius: 30px;
+  box-shadow: 0px -0px 0px 0px rgba(143, 64, 248, .5), 0px 0px 0px 0px rgba(39, 200, 255, .5);
+}
+
+  .btn_tech01::after {
+    content: '';
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-image: linear-gradient(225deg,#ffce00 0%, #ffcc00de 50%, #073318 100%);
+    z-index: -1;
+    transition: all .5s;
+    
+    background: #ffce00;
+  }
+
+  .btn_tech01:hover::after {
+    transform: rotate(150deg);
+
+  }
+
+  .btn_tech01:hover {
+    transform: translate(0,-6px);
+    box-shadow: 10px -10px 25px 0px rgba(143, 64, 248, .25), -10px 10px 25px 0px rgba(39, 200, 255, .25);
+  }
 
 /* #endregion */
