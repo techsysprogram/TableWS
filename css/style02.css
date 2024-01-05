@@ -90,6 +90,25 @@ table > tbody > tr > td > img {
   .pl_reponsive {
     display: none;
   }
+
+  .tech_select_tirage {
+    width: 10rem;
+
+    background-color: #eeeeee;
+    color: #000;
+    border-radius: 10px;
+    border-color: orange;
+    
+    font-size: 1.1rem;
+    cursor: pointer;
+  
+   
+  
+    /* este codigo es para pasar a la linea  */
+    overflow: hidden; /* les dépassements seront masqués */
+    word-wrap: break-word;
+    /* Autres styles modernes */
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -253,5 +272,50 @@ input[type="checkbox"]:checked:disabled + label:before {
     transform: translate(0,-6px);
     box-shadow: 10px -10px 25px 0px rgba(143, 64, 248, .25), -10px 10px 25px 0px rgba(39, 200, 255, .25);
   }
+
+/* #endregion */
+
+
+/* #region selecteur */
+  
+
+
+@media screen and (min-width: 600px) {
+  #tech_select_tirage {  
+    background-color: #eeeeee;
+    color: #000;
+    border-radius: 10px;
+    border-color: orange;
+    
+    font-size: 1.1rem;
+    cursor: pointer;
+    
+    width: 40rem;
+    /* DESKTOP este codigo es para pasar a la linea  */
+    overflow: hidden; /* les dépassements seront masqués */
+    word-wrap: break-word;
+    /* Autres styles modernes */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* MOBILE Styles appliqués lorsque la largeur de l'écran est inférieure ou égale à 600px*/
+  #tech_select_tirage {
+  
+    background-color: #eeeeee;
+    color: #000;
+    border-radius: 10px;
+    border-color: orange;
+    
+    font-size: 1.1rem;
+    cursor: pointer;
+    
+    width: 22rem;
+    /* este codigo es para pasar a la linea  */
+    overflow: hidden; /* les dépassements seront masqués */
+    word-wrap: break-word;
+    /* Autres styles modernes */
+  }
+}
 
 /* #endregion */

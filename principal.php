@@ -40,7 +40,7 @@
 
         foreach ($arr as $item) { //foreach element in $arr
             $code = $item['sIDTirage'];
-            $Tirage = $item['dDateTirage'] . "  " . $item['sAlias'] . "   => " . $code;
+            $Tirage = $item['dDateTirage'] . " " . $item['sAlias'] . " => " . $code;
             $html2 = $html2 . <<<FIN
                 <option value='$code'>$Tirage</option>
             FIN;
