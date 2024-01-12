@@ -5,7 +5,7 @@ $IDO = explode("-", $_GET['ido']);
 $ID_Org = $IDO[0]; //  $_GET['ido'];
 $IDTirage = $IDO[1]; //   $_GET['idt'];
 $str_stock = $IDO[2]; //   $_GET['ido'];  aqui tengo las planches
-$str_actif = $IDO[3]; //   $_GET['ido'];  aqui los codigo de barras
+//$str_actif = $IDO[3]; //   $_GET['ido'];  aqui los codigo de barras
 
 $dev = $_GET['dev'];
 
@@ -46,7 +46,6 @@ switch ($dev) {
         $response = "webservice  =>  " . 'http://boulier.techsysprogram.fr/TechAPI/JoueurPlanche/' . $ID_Org . "/" . $IDTirage . '/techsysprogram@gmail.com' . '<br>' . '<br>' . $response;
         $nuevoTexto = str_replace("},", "},<br><br>", $response);
         $response = $nuevoTexto;
-        $response = "";
         // Code to be executed if expression matches value2
         break;
     // ...
